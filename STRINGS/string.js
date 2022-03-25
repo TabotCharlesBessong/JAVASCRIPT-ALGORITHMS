@@ -28,3 +28,28 @@ console.log(test1.split(" "));
 
 test1.replace("wife","woman")
 console.log(test1);
+
+// Regular expression
+const reg = /\d+/ // any digit 
+console.log(reg.test("432"))
+console.log(reg.test("ghj326723b"))
+console.log(reg.test("fcgvhjb"))
+
+console.log("\n");
+const reg1 = /^\d+$/ // only numeric character
+console.log(reg1.test("432"))
+console.log(reg1.test("ghj326723b"))
+console.log(reg1.test("fcgvhjb"))
+
+// floating numeric character 
+console.log("\n");
+const reg2 = /^[0-9]*.[0-9]*[1-9]+$/
+console.log(reg2.test("234"));
+console.log(reg2.test("23.4"));
+
+// Only alpha numeric characters
+const reg3 = /[a-zA-Z0-9]/
+console.log("\n");
+console.log(reg3.test("This is aweful"));
+console.log(reg3.test("Charlie1230"));
+
