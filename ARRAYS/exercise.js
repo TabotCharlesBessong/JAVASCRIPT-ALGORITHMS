@@ -28,3 +28,44 @@ const spiral = (M)=>{
 }
 
 spiral(M)
+
+const matrix = [
+  [1,0,1],
+  [0,0,1],
+  [1,1,1]
+]
+
+const matricRotation = (mat)=>{
+  const n = mat.length
+  // const m = mat[0].length
+  for(let x = 0  ; x < n / 2 ; x++ ){
+    for(let y = 0 ; y < n -  x - 1 ; y++){
+      // storing values in temporal variables
+      const temp = mat[x][y] 
+      // moving values from right to top 
+      mat[x][y] = mat[y][n-1-x] 
+      // moving values from bottom to right 
+      mat[y][n-1-x] = mat[n-1-x][n-1-y]
+      // move values from bottom to right 
+      mat[n-1-x][n-1-y] = mat[n-1-y][x] 
+      //  assign temp to the left
+      mat[n-1-y][x] = temp
+    }
+  }
+}
+
+// matricRotation([
+  // [1,0,1],
+  // [0,0,1],
+  // [1,1,1]
+// ])
+
+// console.log(matricRotation([
+//   [1,0,1],
+//   [0,0,1],
+//   [1,1,1]
+// ]))
+
+matricRotation(matrix)
+
+console.log(matrix);
