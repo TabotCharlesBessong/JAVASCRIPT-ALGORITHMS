@@ -18,4 +18,4 @@ const tenTobin = (n)=>{
   console.log(bin)
 }
 
-tenTobin(15)
+tenTobin(45)
