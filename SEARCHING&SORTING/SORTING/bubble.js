@@ -16,13 +16,13 @@ const bubbleMin = (arr)=>{
   return arr
 }
 
-const bubbleMax = (arr)=>{
-  for(let i = 0 , arrLen = arr.length; i < arrLen ; i++){
-    for(let j = 0 ; j< i ; j++){
-      if(arr[i] > arr[j]) swap(arr,i,j)
-    }
-  }
-  return arr
-}
+
+
+
+
+    
+  
+
+
 
 console.log(bubbleMin([6,1,2,3,4,5,8,7]))
