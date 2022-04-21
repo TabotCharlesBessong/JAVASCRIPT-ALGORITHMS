@@ -8,7 +8,8 @@ const swap = (arr,idx1,idx2)=>{
 
 const selectionSort = (items)=>{
   const len = items.length
-  let min;
+  let min
+  // we take an element and compare it with its nearest value
   for(let i= 0; i < len ; i++){
     min = i
     for( j = i+1 ; j< len ; j++){

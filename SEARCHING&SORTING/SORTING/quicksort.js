@@ -1,6 +1,6 @@
 const swap = (arr,idx1,idx2)=>{
   let temp = arr[idx1]
-  arr[idx2] = arr[idx2]
+  arr[idx2] = arr[idx1]
   arr[idx2] = temp
 }
 
@@ -18,15 +18,23 @@ const swap = (arr,idx1,idx2)=>{
 // The function below helps us section the array into 2 
 const partition = (arr , left , right)=>{
   // our pivot position is the middle which is actually the average 
+  // The pivot being the middle value
+  // left is the start of the array and the right is last element of the array
   let pivot = arr[Math.floor((right + left) / 2)]
+  // so we will keep doing this while the value in the index of 0 is less than taht at index n-1 since our objectif is to sort it
   while(left <= right){
     // while we keep on moving to the left without passing the left , we keep moving 
+
+    // if the value of the pivot is greater than the value at the index of the left , we move to the next index to the right and continue with our comparison
     while(pivot > arr[left]) left++
+
+    // if the value of the pivot is lesser than the value at the index of the right , we move to the next index to the left and continue with our comparison
     while(pivot < arr[right] ) right--
     if(left <= right){
       let temp = arr[left]
       arr[left] = arr[right]
       arr[right] = temp
+      // swap(arr,right,left)
       left++
       right--
     }
@@ -49,4 +57,4 @@ const quickSort = (items)=>{
   return quickSortHelper(items,0,items.length - 1)
 }
 
-console.log(quickSort([6,8,1,4,2,5,3,7]))
+console.log(quickSort([6,8,1,4,2,5,9,3,7]))
